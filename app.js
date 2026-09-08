@@ -65,7 +65,7 @@ function confidence(q,level){
     days=Math.max(1,Math.round(Math.max(1,a.intervalDays||1)*back[level]));
   }
   a.confidence=level;a.intervalDays=days;a.dueAt=new Date(Date.now()+days*86400000).toISOString(); save();
-  renderPractice();
+  practice();
 }
 function nav(){
   return `<nav class="nav">
