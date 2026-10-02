@@ -13,20 +13,22 @@ Goal: 学習履歴の安全な保存とインポート
 - Microsoft Learnの公式3ガイド本文とskills適用日・domain weightsを確認し、docs/GUIDE_AUDIT.mdに記録。
 - AB-100の2026-10-14適用改訂を現行教材の2026-07-22基準と分離してStudy画面へ表示。問題・履歴は変更なし。
 
+- 公式AB-100本文を再取得し6modules/20問のobjective-level対応を記録。3 Minor変更groupの追加学習scopeを10/14改訂previewとして表示。
+- 現在7/22基準日・module index・question ID/answer・学習履歴を維持。既存完了を新scope合格と扱わない。
+
 ## Current
-- 公式ガイド確認済み。AB-100の将来改訂とAI-103の不足項目はauditへ記録。
+- AB-100将来改訂preview追加済み。AI-103不足scopeの補完は未着手。
 
 ## Next
-- AB-100の10/14改訂の変更logと現行各module/questionを照合し、根拠付きで教材を更新する。
-- AI-103の生成画像/video、音声、視覚prompt injectionの学習範囲を補う。
+- AI-103の生成画像/video、音声、視覚prompt injectionの学習範囲を公式sourceで補う。
 
 ## Blockers
-- 全60問の解説、試験提供言語・時間・価格は今回未検証。
+- 試験提供言語・時間・価格と問題の試験品質/全範囲網羅は未検証。
 
 ## Verification
-- 3 official study guide article bodies fetched and effective dates/domain weights compared
-- node --check app.js / content.js; parser tests 3/3 passed
-- Chrome AB-100 Study: published 2026-10-14 notice visible; JS errors=[]
+- Official AB-100 article effective October14 and 3 Minor change groups verified
+- node --check app.js/content.js; progress parser 3/3 passed
+- Chrome preview visible; existing 6 modules and stored progress unchanged; JS errors=[]
 - git diff --check passed
 
-Updated at: 2026-10-02T16:42:09.194217+00:00
+Updated at: 2026-10-02T21:03:49.285911+00:00
