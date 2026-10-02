@@ -47,3 +47,7 @@ Open http://localhost:8000
 ## Deploy
 
 Static files only. GitHub Pages, Vercel, Cloudflare Pagesなどでそのまま配信できます。
+
+## Import regression checks
+
+Run `node --test scripts/progress-validation.test.mjs` for backup validation. With a local static server running, install `agent-browser` and run `TEST_BASE_URL=http://127.0.0.1:8000 node scripts/import-browser.test.mjs`. The isolated QA browser session checks malformed JSON, invalid maps, storage quota errors, cancelled selection, and valid imports. It seeds synthetic local progress only. `AGENT_BROWSER_BIN` can select an installed CLI path.

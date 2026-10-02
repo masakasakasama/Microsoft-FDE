@@ -7,19 +7,21 @@ Goal: 学習履歴の安全な保存とインポート
 - v1履歴の必須map・回答・スコア・目標日型を検証し、壊れたimportを既存履歴へ適用しない。
 - 永続保存が成功してからメモリ状態へ適用する。未知のトップレベル値を取り込まない。
 
+- 隔離Chromeで不正JSON、不正map、保存容量エラー、キャンセル、正常importを実際のonchange経路で検証。
+- 失敗時に永続履歴・画面・exportしたメモリ内履歴が維持されることを検証する再実行可能なbrowser scriptを追加。
+
 ## Current
-- 変更を検証しGitHubへcheckpoint。
+- Import回帰を検証済み。公式問題・guideの鮮度は未確認。
 
 ## Next
-- 保存容量エラーとimport失敗時に既存履歴が保持されるブラウザ回帰検証を追加する。
-- 試験ガイドの公式情報更新を確認する。
+- READMEの公式3試験Study Guideを取得し、掲載skillsと現行contentの差分・更新日を確認する。
 
 ## Blockers
 - 公式試験情報の鮮度は今回未検証。
 
 ## Verification
+- Browser regression: invalid JSON / invalid maps / quota failure / cancelled selection / valid import passed; browser JS errors=[]
 - node --test scripts/progress-validation.test.mjs: 3/3 passed
-- node --check app.js / progress-validation.js; git diff --check passed
-- ローカルChromeで表示・parser読込を確認、JavaScript errors=[]
+- git diff --check passed
 
-Updated at: 2026-10-02T14:55:42.714575+00:00
+Updated at: 2026-10-02T15:17:02.466253+00:00
