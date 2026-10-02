@@ -7,7 +7,7 @@ let view="home", selectedExam=currentExamId(), practiceId=null, checked=false, s
 function load(){
   try{
     const p=JSON.parse(localStorage.getItem(KEY)||"null");
-    if(p&&p.v===1)return p;
+    if(p)return window.FTE_PROGRESS.parse(p);
   }catch{}
   return {v:1,answered:{},modules:{},mock:{},target:{gh300:"",ai103:"",ab100:""}};
 }
@@ -179,7 +179,7 @@ function review(){
   bindExamTabs();
   document.querySelectorAll("[data-review]").forEach(b=>b.onclick=()=>{practiceId=b.dataset.review;checked=false;selected=null;view="practice";render()});
   document.querySelector("#export").onclick=()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="microsoft-fte-progress.json";a.click();URL.revokeObjectURL(a.href)};
-  document.querySelector("#import").onchange=async ev=>{try{const p=JSON.parse(await ev.target.files[0].text());if(p.v!==1)throw 0;Object.assign(state,p);save();review()}catch{alert("Invalid progress file")}};
+  document.querySelector("#import").onchange=async ev=>{try{const file=ev.target.files[0];if(!file)return;const p=window.FTE_PROGRESS.parse(JSON.parse(await file.text()));localStorage.setItem(KEY,JSON.stringify(p));Object.assign(state,p);review()}catch{alert("Invalid progress file")}};
   document.querySelector("#reset").onclick=()=>{if(confirm("学習履歴をすべて削除しますか？")){localStorage.removeItem(KEY);location.reload()}}
 }
 function render(){if(view==="home")home();else if(view==="study")study();else if(view==="practice")practice();else if(view==="mock")mock();else review()}
