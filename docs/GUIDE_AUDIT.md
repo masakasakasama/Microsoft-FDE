@@ -41,3 +41,23 @@ explicit without claiming that prior completions include it.
 
 Source: https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-100
 Skills measured as of: October 14, 2026. Source article Last updated is distinct.
+
+## AI-103 coverage supplement (2026-10-02 refresh)
+
+The official English article was retrieved again. Its effective skills heading
+remains April 16, 2026 and five domain weights match the local snapshot. Added
+three Study modules at indexes 6–8, preserving all existing indexes 0–5 and
+question IDs/answers. Prior completed modules do not mark these additions complete;
+the Study denominator increases from 6 to 9. No progress migration or reset.
+
+| Official objective group | Added Study module | Included skills |
+|---|---|---|
+| Computer vision: image/video generation | Image & video generation | text/reference media generation, inpainting/mask/prompt edits, video editing, platform controls |
+| Computer vision: multimodal understanding/responsible AI | Multimodal vision & safety | grounded visual QA, caption/alt-text, video segments, Content Understanding modes, embedded-text indirect prompt injection, filters/policy |
+| Text analysis: speech | Speech & audio | STT/TTS for agent interaction, custom speech, audio reasoning, speech translation |
+
+Source: https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103
+These are study outlines, not lab completion evidence or full question coverage.
+The existing 20 AI-103 practice questions are unchanged and do not cover every
+added objective. Exam duration, price and localized availability remain separate
+unverified metadata.
