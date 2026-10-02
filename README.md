@@ -5,7 +5,7 @@ GH-300 → AI-103 → AB-100 の順で Microsoft FTE バッジ取得を進める
 ## Features
 
 - 3試験を1つのダッシュボードで管理
-- Microsoft Learnの最新Study Guideのskills measuredを学習単位として整理
+- Microsoft LearnのStudy Guideのskills measuredを学習単位として整理（確認日・改訂差分は docs/GUIDE_AUDIT.md）
 - 60問の独自問題（各試験20問）
 - 正答だけでなく、網羅率、2回以上の連続正解、Study完了、模試を分けて定着度を算出
 - 回答後に「自信なし / 少し迷った / 自信あり」を記録
