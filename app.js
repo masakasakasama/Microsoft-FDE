@@ -39,8 +39,8 @@ function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",
 function pct(x){return Math.max(0,Math.min(100,x))}
 function bar(v){return `<div class="progress"><i style="width:${pct(v)}%"></i></div>`}
 function currentExam(){return exam(selectedExam)}
-function nextQuestion(id=selectedExam){
-  const now=Date.now(), qs=examQs(id);
+function nextQuestion(id=selectedExam,excludeId){
+  const now=Date.now(), qs=examQs(id).filter(q=>q.id!==excludeId);
   return qs.find(q=>!state.answered[q.id]) ||
     qs.find(q=>state.answered[q.id]?.dueAt && new Date(state.answered[q.id].dueAt).getTime()<=now) ||
     qs.sort((a,b)=>(state.answered[a.id]?.streak||0)-(state.answered[b.id]?.streak||0))[0];
@@ -65,7 +65,7 @@ function confidence(q,level){
     days=Math.max(1,Math.round(Math.max(1,a.intervalDays||1)*back[level]));
   }
   a.confidence=level;a.intervalDays=days;a.dueAt=new Date(Date.now()+days*86400000).toISOString(); save();
-  practice();
+  nextPractice(q.id);
 }
 function nav(){
   return `<nav class="nav">
@@ -142,7 +142,11 @@ function feedback(q,a){
   const ok=a?.correct;
   return `<div class="card feedback ${ok?"good":"bad"}"><h3>${ok?"正解":"不正解"}</h3><p>${esc(q.explanation)}</p><div class="conf"><button class="btn" data-confidence="low">自信なし</button><button class="btn" data-confidence="medium">少し迷った</button><button class="btn" data-confidence="high">自信あり</button></div>${a?.dueAt?`<p class="small" style="margin-top:10px">次回復習 ${new Date(a.dueAt).toLocaleDateString("ja-JP")} · ${a.intervalDays}日後</p>`:""}<div class="cta"><button class="btn primary" id="nextq">次の問題</button></div></div>`
 }
-function nextPractice(){practiceId=null;checked=false;selected=null;practice()}
+function nextPractice(completedId){
+  practiceId=completedId?nextQuestion(selectedExam,completedId)?.id:null;checked=false;selected=null;
+  practice();
+  window.scrollTo(0,0);
+}
 function mock(){
   const e=currentExam();
   if(!examSession){
