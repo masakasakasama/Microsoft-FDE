@@ -4,6 +4,7 @@ Status: blocked
 Goal: 学習履歴の安全な保存とインポート
 
 ## Done
+- 0178027の自信度記録後に次の問題へ進む修正と既存回帰scriptを確認。公開app.js/content.jsが最新mainと一致し、元のgithub.io URLでHTTP200、Pages配信CI成功を確認。
 - v1履歴の必須map・回答・スコア・目標日型を検証し、壊れたimportを既存履歴へ適用しない。
 - 永続保存が成功してからメモリ状態へ適用する。未知のトップレベル値を取り込まない。
 
@@ -31,6 +32,8 @@ Goal: 学習履歴の安全な保存とインポート
 - AB-100公式exam/certificationページに試験時間の明記がない。現在は未確認表示とし完了扱いにしない。独自問題の全範囲網羅・試験品質は保証していない。
 
 ## Verification
+- 0178027 app.js syntax check passed; public app.js/content.js exactly match current main; Pages CI success. New confidence browser regression script inspected, not independently rerun in this review
+- AB-100 exam/certification official pages HTTP200 rechecked; neither gives a numerical duration. Existing unconfirmed display and Next preserved
 - Official pages fetched: GH-300 100 minutes; AI-103 120 minutes; Japanese available for all three; country/region-dependent pricing
 - AB-100 duration absent from both retrieved official pages; no inferred number
 - node --check content.js/app.js; progress parser 3/3 passed
@@ -38,4 +41,4 @@ Goal: 学習履歴の安全な保存とインポート
 - Chrome 390px: three metadata/source cards, price/booking note, existing localStorage progress unchanged; JS errors=[]
 - git diff --check passed; static repository has no build/lint scripts
 
-Updated at: 2026-10-04T03:03:54.420784+00:00
+Updated at: 2026-10-04T10:05:25.416895+00:00
