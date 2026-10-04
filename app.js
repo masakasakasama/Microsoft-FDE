@@ -101,6 +101,7 @@ function examCard(e,i){
   const s=stats(e.id);
   return `<article class="card examcard"><div class="num">0${i+1}</div><span class="badge">${e.code}</span><h3>${e.code}</h3><div class="name">${esc(e.name)}</div>
     <div class="meta"><span>${e.hours}</span><span>${e.examTime}</span><span>${e.language}</span></div>
+    <p class="small">試験情報確認日: ${e.examMetadataChecked} · <a href="${e.examSource}" target="_blank" rel="noreferrer">公式試験ページ</a><br>受験料は受験する国・地域によって異なります。予約時点の料金・時間・提供言語を公式ページで確認してください。</p>
     <div class="label">READINESS ${s.readiness}%</div>${bar(s.readiness)}
     <div class="cta"><button class="btn primary" data-exam="${e.id}" data-go="study">Study</button><button class="btn" data-exam="${e.id}" data-go="practice">Practice</button></div></article>`
 }

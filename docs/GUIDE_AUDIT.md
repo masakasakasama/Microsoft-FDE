@@ -61,3 +61,25 @@ These are study outlines, not lab completion evidence or full question coverage.
 The existing 20 AI-103 practice questions are unchanged and do not cover every
 added objective. Exam duration, price and localized availability remain separate
 unverified metadata.
+
+## Exam metadata check (2026-10-04)
+
+| Exam | Official offered Japanese | Assessment time | Official page |
+|---|---|---|---|
+| GH-300 | Yes | 100 minutes | https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/ |
+| AI-103 | Yes | 120 minutes | https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/ |
+| AB-100 | Yes (Japanese / ja listed) | Not stated in the retrieved pages; confirm when scheduling | https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-100/ |
+
+GH-300 and AI-103 explicitly say “You will have 100/120 minutes to complete this
+assessment.” AB-100's exam page and certification page list Japanese but do not
+state an assessment duration. The local English-only label was corrected and the
+unsourced “100–120 minutes” estimate was replaced with an explicit unknown.
+AB-100 certification cross-check:
+https://learn.microsoft.com/en-us/credentials/certifications/agentic-ai-business-solutions-architect/
+
+The pages say price depends on the country or region in which the exam is proctored.
+No fixed price is stored. Learners are directed to confirm current price, duration
+and offered language at booking. Metadata has a check date and direct official
+exam link; Study guide sources remain separate. Study modules, all question IDs,
+answers and stored progress are unchanged. The local 20-question/30-minute mock
+is not the official assessment duration.
